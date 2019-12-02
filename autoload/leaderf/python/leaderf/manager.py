@@ -2779,13 +2779,14 @@ class Manager(object):
                 self._index = 0 # search from beginning
                 if self._cli.pattern and "--live" not in self._arguments:
                     self._search(cur_content)
-            elif equal(cmd, '<C-K>'):
+                    #changes - eyal up <> down c-k c-j
+            elif equal(cmd, '<Up>'):
                 self._toUp()
                 self._previewResult(False)
-            elif equal(cmd, '<C-J>'):
+            elif equal(cmd, '<Down>'):
                 self._toDown()
                 self._previewResult(False)
-            elif equal(cmd, '<Up>'):
+            elif equal(cmd, '<C-K>'):
                 if self._cli.previousHistory(self._getExplorer().getStlCategory()):
                     if self._getInstance().isReverseOrder():
                         lfCmd("normal! G")
@@ -2793,7 +2794,7 @@ class Manager(object):
                         self._gotoFirstLine()
                     self._index = 0 # search from beginning
                     self._search(cur_content)
-            elif equal(cmd, '<Down>'):
+            elif equal(cmd, '<C-J>'):
                 if self._cli.nextHistory(self._getExplorer().getStlCategory()):
                     if self._getInstance().isReverseOrder():
                         lfCmd("normal! G")
