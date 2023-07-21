@@ -60,10 +60,10 @@ class LineExplManager(Manager):
     def _defineMaps(self):
         lfCmd("call leaderf#Line#Maps()")
 
-    def _accept(self, file, mode, *args, **kwargs):
-        lfCmd("norm! m'")
-        super(LineExplManager, self)._accept(file, mode, *args, **kwargs)
-        lfCmd('silent! norm! zO') #fix 473
+    # def _accept(self, file, mode, *args, **kwargs):
+        # lfCmd("norm! m'")
+        # super(LineExplManager, self)._accept(file, mode, *args, **kwargs)
+        # lfCmd('silent! norm! zO') #fix 473
 
     def _acceptSelection(self, *args, **kwargs):
         if len(args) == 0:
