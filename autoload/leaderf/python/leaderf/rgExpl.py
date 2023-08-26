@@ -177,6 +177,8 @@ class RgExplorer(Explorer):
             one_args_options += "--sort %s " % arguments_dict["--sort"][0]
         if "--sortr" in arguments_dict:
             one_args_options += "--sortr %s " % arguments_dict["--sortr"][0]
+        if "--filelist" in arguments_dict:
+            one_args_options += "--filelist %s " % arguments_dict["--filelist"][0]
 
         repeatable_options = ''
         if "-f" in arguments_dict:
