@@ -169,6 +169,7 @@ let g:Lf_Arguments = {
             \           {"name": ["--append"], "nargs": 0, "help": "Append to the previous search results."},
             \           {"name": ["--match-path"], "nargs": 0, "help": "Match the file path when fuzzy searching."},
             \           {"name": ["--wd-mode"], "nargs": 1, "metavar": "<MODE>", "help": "Specify the working directory mode, value has the same meaning as g:Lf_WorkingDirectoryMode."},
+            \           {"name": ["--filelist"], "nargs": 1, "metavar": "<FILELIST>", "help": "Specify file list."},
             \           {"name": ["--live"], "nargs": 0, "help": "Perform the so called live grep. This option implies `-F`"},
             \   ],
             \ "gtags":[
