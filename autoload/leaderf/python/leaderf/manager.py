@@ -3115,7 +3115,8 @@ class Manager(object):
                 self._cli.writeHistory(self._getExplorer().getStlCategory())
                 self.quit()
                 break
-            elif equal(cmd, '<Tab>'):   # switch to Normal mode
+
+            elif equal(cmd, '<Tab>') or equal(cmd,'<C-Tab>'):   # switch to Normal mode
                 self._current_mode = 'NORMAL'
                 if self._getInstance().getWinPos() == 'popup':
                     if lfEval("exists('*leaderf#%s#NormalModeFilter')" % self._getExplorer().getStlCategory()) == '1':
@@ -3141,6 +3142,10 @@ class Manager(object):
                             % (self._getExplorer().getStlCategory(), self._current_mode))
                     self._getInstance().setPopupStl(self._current_mode)
 
+
+                if equal(cmd, '<Tab>'):
+                    lfCmd("call EasyMotion#SolEnter(0,2,'call SE()')")
+                
                 break
             elif equal(cmd, '<F5>'):
                 self.refresh(False)
