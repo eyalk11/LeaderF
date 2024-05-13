@@ -821,9 +821,9 @@ class LfCli(object):
                         self._paste()
                         self._buildPattern()
                         yield '<Update>'
-                    elif equal(cmd, '<Home>') or equal(cmd, '<C-B>'):
+                    elif equal(cmd, '<Home>'):
                         self._toBegin()
-                    elif equal(cmd, '<End>') or equal(cmd, '<C-E>'):
+                    elif equal(cmd, '<End>'):
                         self._toEnd()
                     elif equal(cmd, '<Left>'):
                         self._toLeft()
